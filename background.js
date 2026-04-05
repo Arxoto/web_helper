@@ -82,8 +82,10 @@ const fetchConfig = async () => {
 const syncConfig = async (conf) => {
     if (conf.directAction) {
         await chrome.action.setPopup({ popup: '' });
+        await chrome.action.setTitle({ title: 'directMode' });
     } else {
         await chrome.action.setPopup({ popup: 'popup.html' });
+        await chrome.action.setTitle({ title: 'open popup' });
     }
     await chrome.storage.local.set({ "conf": conf });
 }
