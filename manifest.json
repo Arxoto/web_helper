@@ -1,17 +1,22 @@
 {
-  "name": "web_helper",
-  "description": "web_helper",
-  "version": "1.0",
   "manifest_version": 3,
-  "action": {
-    "default_title": "do action"
-    // "default_popup": "popup.html"
-  },
+  "name": "web_helper",
+  "version": "1.0",
+  "description": "Some utils for Web",
   "permissions": [
+    "storage",
+    "nativeMessaging",
     "activeTab",
     "scripting"
   ],
   "background": {
     "service_worker": "background.js"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "action": {
+    "default_title": "Web Helper"
   }
 }
